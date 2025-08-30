@@ -1,17 +1,17 @@
 // prep-time/server/server.js
+
+//Initializing dotenv 
+const dotenv = require('dotenv');
+dotenv.config();
+
 // Initializing dependencies
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv');
-const { createClient } = require('@supabase/supabase-js');
 
-// Import Routes
+// Import API Routes
 const mealRoutes = require('./routes/meal-routes.js');
 const userRoutes = require('./routes/user-routes.js');
-
-// Load .env file variables
-dotenv.config();
 
 // Express app creation and port configuration
 const app = express();
@@ -21,12 +21,15 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Supabase configuration
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
+// API Routes
+app.use("/api/meals", mealRoutes);
+app.use("/api/users", userRoutes);
 
 // Test to see if server is running
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "PrepTime is running!" });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
