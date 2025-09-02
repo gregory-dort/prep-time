@@ -57,7 +57,32 @@ module.exports = (supabase) => {
 
     // API endpoint to sign in
     router.post("/signin", async (req, res) => {
-        const { username, password } = req.body;
+        const { email, password } = req.body;
+
+        if (!username || !password) {
+            return res.status(400).json({ error: "Missing field required: username or password" });
+        }
+
+        try {
+            const { data: authData, error: authError } = await supabase.auth.signInWithPassword ({
+                email: email,
+                password: password
+            });
+
+            if (authError) {
+                console.error('Invalid Credentials. Please try again.', authError);
+                return res.status(400).json({ error: authError.message });
+            }
+
+            return res.status(200).json({ 
+                message: 'User signed in successfully',
+                user: { id: authData.user.id, email: authData.user.email }
+            });
+
+        } catch (error) {
+            return res.status(500).json({ error: "Unexpected error occurred" });
+        };
     });
+
     return router;
 }
