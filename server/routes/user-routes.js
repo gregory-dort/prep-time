@@ -59,8 +59,8 @@ module.exports = (supabase) => {
     router.post("/signin", async (req, res) => {
         const { email, password } = req.body;
 
-        if (!username || !password) {
-            return res.status(400).json({ error: "Missing field required: username or password" });
+        if (!email || !password) {
+            return res.status(400).json({ error: "Missing field required: email or password" });
         }
 
         try {
@@ -82,6 +82,10 @@ module.exports = (supabase) => {
         } catch (error) {
             return res.status(500).json({ error: "Unexpected error occurred" });
         };
+    });
+
+    router.post("/signout", async (req, res) => {
+        //
     });
 
     return router;
