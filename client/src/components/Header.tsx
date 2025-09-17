@@ -1,5 +1,5 @@
 import { useState } from 'react';
-const Navbar = () => {
+const Header = () => {
     // Function to handle authentication state added here later
 
     // Function to sign out of account added here later
@@ -31,4 +31,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Header;
