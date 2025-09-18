@@ -4,6 +4,7 @@ import SignInForm from './Signin';
 import SignUpForm from './Signup';
 import Schedule from './Schedule';
 import MealList from './MealList';
+import Modal from './Modal';
 
 export {
     Header,
@@ -11,5 +12,6 @@ export {
     SignInForm,
     SignUpForm,
     Schedule,
-    MealList
+    MealList,
+    Modal
 };
