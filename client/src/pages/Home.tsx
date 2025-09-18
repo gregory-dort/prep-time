@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Header, Footer, SignInForm, SignUpForm, Schedule, MealList } from '../components';
 
 const Home = () => {
     

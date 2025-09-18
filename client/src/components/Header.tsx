@@ -3,8 +3,12 @@ const Header = () => {
     // Function to handle authentication state added here later
 
     // Function to sign out of account added here later
-    const handleSignOut = () => {
-        // sign out logic here
+    const handleSignOut = async () => {
+       try {
+        // send POST request to API for sign out
+       } catch (err) {
+        console.error('Network or server-side error: ', err); 
+       }
     }
 
     return (
