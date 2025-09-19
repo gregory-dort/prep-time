@@ -4,9 +4,9 @@ import { Header, Footer, Modal, SignInForm, SignUpForm, Schedule, MealList } fro
 const Home = () => {
     
     return (
-        <div className = "bg-white min-h-screen flex flex-col">
+        <main className = "bg-gradient-to-br from-yellow-100 to-orange-300 min-h-screen w-screen flex items-center mt-20">
             <Header />  
-        </div>
+        </main>
     )
 }
 

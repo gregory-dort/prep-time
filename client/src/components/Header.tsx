@@ -12,23 +12,23 @@ const Header = () => {
     }
 
     return (
-        <div className = "fixed top-0 left-0bg-transparent w-full flex shadow-md justify-between items-center p-6 z-50">
+        <div className = "fixed top-0 left-0 bg-gray-200/50 w-full flex shadow-md justify-between items-center p-4 z-50">
             {/* Left Side of Navbar */}
-            <div className = "flex-grow flex justify-start items-center">
+            <div className = "w-1/3 flex justify-start items-center">
                 <h1 className = "text-xl text-gray-800">Welcome to PrepTime!</h1>
             </div>
 
             {/* Center of Navbar */}
-            <div className = "flex-none">
-                <img src="/logo.png" alt="PrepTime Logo" className = "h-10 w-auto"/>
+            <div className = "flex-none w-1/3 flex justify-center">
+                <img src="/images/preptime-logo.png" alt="PrepTime Logo" className = "h-20 w-auto max-w-full"/>
             </div>
 
             {/* Right Side of Navbar */}
-            <div className = "flex-grow flex justify-end items-center space-x-4">
+            <div className = "w-1/3 flex justify-end items-center space-x-4">
                 {/* Needs conditional rendering later on. Currently adding all buttons needed to the Navbar and will fix later*/}
                 <button
                     onClick = {handleSignOut}
-                    className = "text-black rounded-md bg-white hover:bg-gradient-to-br from-yellow-100-to-orange-400 transition duration-300 px-4 py-2 font-medium"
+                    className = "text-black px-4 py-2 font-medium rounded-md bg-amber-100 hover:bg-gradient-to-r from-yellow-100 to-orange-300 transition ease-in-out duration-1000"
                 >Sign Out</button>
             </div>
         </div>
