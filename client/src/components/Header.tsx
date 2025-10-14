@@ -1,6 +1,14 @@
 import { useState } from 'react';
+import Modal from './Modal';
+
 const Header = () => {
-    // Function to handle authentication state added here later
+    // Function to open sign up / sign in modal
+    const [showModal, setShowModal] = useState(false);
+    const [modalContent, setModalContent] = useState<'signin' | 'signup'>('signin');
+
+    const handleModal = () => {
+        
+    }
 
     // Function to sign out of account added here later
     const handleSignOut = async () => {
@@ -12,7 +20,7 @@ const Header = () => {
     }
 
     return (
-        <div className = "fixed top-0 left-0 bg-gray-200/50 w-full flex shadow-md justify-between items-center p-4 z-50">
+        <div className = "fixed top-0 bg-gray-200/50 w-full flexshadow-md justify-between items-center p-4 z-50">
             {/* Left Side of Navbar */}
             <div className = "w-1/3 flex justify-start items-center">
                 <h1 className = "text-xl text-gray-800">Welcome to PrepTime!</h1>
@@ -26,9 +34,13 @@ const Header = () => {
             {/* Right Side of Navbar */}
             <div className = "w-1/3 flex justify-end items-center space-x-4">
                 {/* Needs conditional rendering later on. Currently adding all buttons needed to the Navbar and will fix later*/}
+                 <button
+                    onClick = {handleModal}
+                    className = "text-black px-4 py-2 font-medium rounded-md bg-orange-100 hover:scale-110 transition ease-in-out duration-900"
+                >Sign In / Sign Up</button>
                 <button
                     onClick = {handleSignOut}
-                    className = "text-black px-4 py-2 font-medium rounded-md bg-amber-100 hover:bg-gradient-to-r from-yellow-100 to-orange-300 transition ease-in-out duration-1000"
+                    className = "text-black px-4 py-2 font-medium rounded-md bg-amber-100 hover:scale-110 transition ease-in-out duration-900"
                 >Sign Out</button>
             </div>
         </div>
