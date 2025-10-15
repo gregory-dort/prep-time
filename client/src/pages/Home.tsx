@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <Header />
-            <main className = "bg-gradient-to-br from-yellow-100 to-orange-300 min-h-screen flex items-center mt-20">
+            <main className = "bg-gradient-to-br from-yellow-100 to-orange-300 min-h-screen flex items-center mt-24">
                 <Schedule />
                 <MealList />
             </main>
